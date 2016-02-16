@@ -42,9 +42,12 @@ endif()
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
 	add_compile_options(
-		-Wlogical-op
 		-Wstrict-null-sentinel
 	)
+
+	if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 4.5)
+		add_compile_options(-Wlogical-op) # the flag exists in 4.4 but is buggy
+	endif()
 
 	if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER 4.6)
 		add_compile_options(-Wnoexcept)
