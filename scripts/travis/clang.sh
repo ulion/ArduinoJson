@@ -1,10 +1,7 @@
 #!/bin/sh -eux
 
-export CC=clang-$VERSION
-export CXX=clang++-$VERSION
-
 curl -sS https://cmake.org/files/v3.4/cmake-3.4.0-Linux-x86_64.tar.gz | tar xz -C /tmp --strip 1
 
-/tmp/bin/cmake .
+/tmp/bin/cmake -DCMAKE_CXX_COMPILER=clang++-$VERSION .
 make 
 make test
