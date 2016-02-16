@@ -1,11 +1,37 @@
 sudo: false
 language: cpp
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-precise-3.4
+      - llvm-toolchain-precise-3.5
+      - llvm-toolchain-precise-3.6
+    packages:
+      - g++-4.4
+      - g++-4.5
+      - g++-4.6
+      - g++-4.7
+      - g++-4.8
+      - g++-4.9
+      - g++-5
+      - clang-3.4
+      - clang-3.5
+      - clang-3.6
 cache:
   directories:
     - "~/.platformio"
 env:
-  - COMPILER=gcc
-  - COMPILER=clang
+  - COMPILER=gcc VERSION=4.4
+  - COMPILER=gcc VERSION=4.5
+  - COMPILER=gcc VERSION=4.6
+  - COMPILER=gcc VERSION=4.7
+  - COMPILER=gcc VERSION=4.8
+  - COMPILER=gcc VERSION=4.9
+  - COMPILER=gcc VERSION=5
+  - COMPILER=clang VERSION=3.4
+  - COMPILER=clang VERSION=3.5
+  - COMPILER=clang VERSION=3.6
   - COMPILER=arduino VERSION=1.5.8 BOARD=arduino:avr:uno
   - COMPILER=arduino VERSION=1.6.7 BOARD=arduino:avr:uno
   - COMPILER=platformio BOARD=uno

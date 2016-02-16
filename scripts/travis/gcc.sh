@@ -1,7 +1,7 @@
 #!/bin/sh -eux
 
-export CC=gcc
-export CXX=g++
+export CC=gcc-$VERSION
+export CXX=g++-$VERSION
 
 curl https://cmake.org/files/v3.4/cmake-3.4.0-Linux-x86_64.tar.gz | tar xz -C /tmp --strip 1
 
