@@ -45,7 +45,13 @@ matrix:
           packages: ['g++-5']
       env: SCRIPT=cmake CMAKE_CXX_COMPILER=g++-5
     - compiler: clang
-      env: SCRIPT=cmake
+      env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++
+    - compiler: clang
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.4']
+          packages: ['clang-3.4']
+      env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++-3.4
     - compiler: clang
       addons:
         apt:
