@@ -48,34 +48,34 @@ matrix:
       addons:
         apt:
           packages: ['clang-3.3']
-      env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++
+      env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++-3.3
     - compiler: clang
       addons:
         apt:
           packages: ['clang-3.4']
-      env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++
+      env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++-3.4
     - compiler: clang
       addons:
         apt:
-          sources: ['llvm-toolchain-precise-3.5']
+          sources: ['ubuntu-toolchain-r-test','llvm-toolchain-precise-3.5']
           packages: ['clang-3.5']
       env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++-3.5
     - compiler: clang
       addons:
         apt:
-          sources: ['llvm-toolchain-precise-3.6']
+          sources: ['ubuntu-toolchain-r-test','llvm-toolchain-precise-3.6']
           packages: ['clang-3.6']
       env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++-3.6
     - compiler: clang
       addons:
         apt:
-          sources: ['llvm-toolchain-precise-3.7']
+          sources: ['ubuntu-toolchain-r-test','llvm-toolchain-precise-3.7']
           packages: ['clang-3.7']
       env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++-3.7
     - compiler: clang
       addons:
         apt:
-          sources: ['llvm-toolchain-precise-3.8']
+          sources: ['ubuntu-toolchain-r-test','llvm-toolchain-precise-3.8']
           packages: ['clang-3.8']
       env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++-3.8
     - compiler: gcc
