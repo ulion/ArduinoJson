@@ -45,15 +45,7 @@ matrix:
           packages: ['g++-5']
       env: SCRIPT=cmake CMAKE_CXX_COMPILER=g++-5
     - compiler: clang
-      addons:
-        apt:
-          packages: ['clang-3.3']
-      env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++-3.3
-    - compiler: clang
-      addons:
-        apt:
-          packages: ['clang-3.4']
-      env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++-3.4
+      env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++
     - compiler: clang
       addons:
         apt:
@@ -72,12 +64,12 @@ matrix:
           sources: ['ubuntu-toolchain-r-test','llvm-toolchain-precise-3.7']
           packages: ['clang-3.7']
       env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++-3.7
-    - compiler: clang
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test','llvm-toolchain-precise-3.8']
-          packages: ['clang-3.8']
-      env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++-3.8
+    # - compiler: clang
+    #   addons:
+    #     apt:
+    #       sources: ['ubuntu-toolchain-r-test','llvm-toolchain-precise-3.8']
+    #       packages: ['clang-3.8']
+    #   env: SCRIPT=cmake CMAKE_CXX_COMPILER=clang++-3.8
     - compiler: gcc
       env: SCRIPT=coverage
     - env: SCRIPT=arduino VERSION=1.5.8 BOARD=arduino:avr:uno
